@@ -9,8 +9,8 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY product_list_app.py .
-COPY app ./app
+COPY . ./app
 
 EXPOSE 5000
 
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "product_list_app:app"]
+CMD ["python3", "product_list_app:app"]
